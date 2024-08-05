@@ -1,4 +1,4 @@
-import MapImage from "../../assets/world.svg";
+import MapImage from "../../assets/MapChart_Map.svg";
 import $ from 'jquery';
 import {useLocation} from "react-router-dom";
 
@@ -9,13 +9,16 @@ function Map() {
     console.log(data);
     return (
         <>
-            <img src={MapImage} alt={'Logo'}/>
+            <object type="image/svg+xml" data={MapImage}>
+                Seu navegador não suporta SVG.
+            </object>
         </>
     );
 }
+
 export default Map;
 
-$(function() {
+$(function () {
     $(document).on('click', '.parent', function () {
         console.log("Teste");
         $(this).find('object').contents().find('svg').attr("class", "selected");

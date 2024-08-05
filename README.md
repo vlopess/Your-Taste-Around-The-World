@@ -12,7 +12,7 @@
 ## Tecnologias utilizadas
 Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 
-![](https://skillicons.dev/icons?i=react,idea)
+![](https://skillicons.dev/icons?i=react,vite,idea)
 
 ## Demonstração
 <img src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/photo.png'></img>

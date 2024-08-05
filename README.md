@@ -1,5 +1,5 @@
 
-<img style='width:100px; height:100px;' src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/globe.png'></img>
+<img style='width:300px; height:250px;' src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/globe.png'></img>
 <h1 align="left"><b>Your Taste Around The World</b></h1>
 
 **Your Taste Around The World** é um site interativo que permite aos usuários descobrir a origem dos artistas que eles escutam.
@@ -15,7 +15,7 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ![](https://skillicons.dev/icons?i=react,idea)
 
 ## Demonstração
-<img style='width:100px; height:100px;' src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/photo.png'></img>
+<img src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/photo.png'></img>
 
 
 ## Feedback

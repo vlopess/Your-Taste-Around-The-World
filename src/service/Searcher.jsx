@@ -13,7 +13,7 @@ class Seacher {
             list.map((item) => {
                 names.push(item.name);
             });
-            return `Para as seguintes bandas: ${names.join()}. Retorne um JSON com os seguintes dados para cada banda, pegue os dados corretamente: {"nome": "Nome da Banda", "cidade": "Cidade de Origem", "país": "País de Origem"}.`
+            return `Para as seguintes bandas: ${names.join()}. Retorne um JSON com os seguintes dados para cada banda, assegurando que os dados estejam corretos. Por favor, não inclua a cidade; quero apenas o estado, província ou condado. O formato deve ser: {"nome": "Nome da Banda", "origem": "Apenas o Estado (sem a cidade, com underscore entre as palavras)", "país": "País de Origem (SIGLA EM INGLES)"}.`
         }
 
         const requestBody = handleList(list);

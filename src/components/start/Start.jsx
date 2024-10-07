@@ -3,12 +3,13 @@ import { useState} from "react";
 import ButtonSpotify from "../ButtonSpotify/ButtonSpotify.jsx";
 import ButtonLastFm from "../ButtonLastFm/ButtonLastFm.jsx";
 
+
 function Start(){
     const [username, setUserName] = useState('');
     const [loading, setLoading] = useState(false);
-
     return (
-        <div className="container-login">
+        <div
+            className="container-login">
             <img src={globeLogo} className="logo" alt="React logo"/>
             <h2>Your Taste Around The World</h2>
             <div className="card">

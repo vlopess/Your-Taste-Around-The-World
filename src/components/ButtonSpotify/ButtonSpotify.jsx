@@ -52,8 +52,8 @@ function ButtonSpotify({ setLoading}){
     }
 
     useEffect(() => {
-        if(window.location.hash) getAcessToken(window.location.hash);
-    },[navigate]);
+        if(window.location.hash) getAcessToken(window.location.hash).then(r => []);
+    },[getAcessToken, navigate]);
 
 
     async function loadDataFromSpotify() {

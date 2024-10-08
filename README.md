@@ -15,9 +15,16 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ![](https://skillicons.dev/icons?i=react,vite,idea)
 
 ## Demonstração
+
+### Tela inicial
 ![Captura de tela de 2024-10-07 22-34-26](https://github.com/user-attachments/assets/14310e6b-7d0d-4549-a91e-6f5c19926c3a)
 
+### Tela de detalhamento de artistas mais ouvidos
 ![Captura de tela de 2024-10-07 22-34-39](https://github.com/user-attachments/assets/b9628f27-40df-4435-bd3f-1f723709aab9)
+
+### Tela de detalhamento de país e seus artistas
+![Screenshot_4](https://github.com/user-attachments/assets/50c618c4-71f1-4bf8-bb54-200a805961ae)
+
 
 
 ## Feedback

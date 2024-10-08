@@ -1,4 +1,4 @@
-export const ContentArtistas = ({data, setPais}) => {
+export const ContentArtistas = ({data, setArtista}) => {
     return (
         <>
             <h3>ARTISTAS MAIS OUVIDOS:</h3>
@@ -12,7 +12,7 @@ export const ContentArtistas = ({data, setPais}) => {
                             }}
                         >
                             {e.nome} <span style={{cursor: "pointer"}}
-                                           onClick={() => setPais(e.país)}><b>({e.país})</b></span>
+                                           onClick={() => setArtista(e)}><b>({e.sigla})</b></span>
                         </p>
                     )
                 }

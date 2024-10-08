@@ -2,17 +2,19 @@ import {useEffect, useState} from "react";
 import Arrow from "../../assets/back-arrow.svg";
 import {ToolTip} from "../ToolTip/ToolTip.jsx";
 
-export const ContentPais = ({data, pais, setPais}) =>{
+export const ContentPais = ({data, artista, setArtista}) =>{
     const [artistas, setArtistas] = useState([]);
 
     useEffect(() => {
-        data = data.filter(e => e.país == pais);
+        console.log(artista);
+        data = data.filter(e => e.sigla == artista.sigla);
+        console.log(data);
         data.forEach(e => e.origem = e.origem.replaceAll("_", " "))
         setArtistas(data)
     }, []);
 
     const back = () => {
-        setPais("")
+        setArtista("")
     }
 
     return (
@@ -27,7 +29,7 @@ export const ContentPais = ({data, pais, setPais}) =>{
                     src={Arrow}
                     alt="Arrow"
                 />
-                <span style={{width: "100%"}}><h3>{pais}</h3></span>
+                <span style={{width: "100%"}}><h3>{artista.país}</h3></span>
                 <ToolTip/>
             </div>
             <p>{artistas.length} artirtas</p>

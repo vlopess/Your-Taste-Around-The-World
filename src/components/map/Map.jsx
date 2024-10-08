@@ -1,17 +1,34 @@
 import MapImage from "../../assets/MapChart_Map.svg";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ContentArtistas} from "../ContentArtistas/ContentArtistas.jsx";
 import {ContentPais} from "../ContentPais/ContentPais.jsx";
+import { ToastContainer, Zoom, toast } from "react-toastify";
 
 
 function Map() {
-    const [pais, setPais] = useState("");
+    const navigate = useNavigate();
+    const [artirta, setArtista] = useState();
     const location = useLocation();
     const data = location.state;
     console.log(data)
 
     useEffect(() => {
+        if(data == null){
+            toast.error('Erro ao buscar os dados! Tente Novamente.', {
+                position: "top-center",
+                autoClose: 1000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Zoom,
+            });
+            navigate('/');
+        }
+
         const objectElement = document.querySelector('object');
 
         objectElement.addEventListener('load', () => {
@@ -21,7 +38,7 @@ function Map() {
                 const paths = svgDoc.querySelectorAll('path');
                 let blue = 60;
                 data.forEach(data =>{
-                    let id = `${data.origem}_${data.país}`;
+                    let id = `${data.origem}_${data.sigla}`;
                     let element = svgDoc.getElementById(id);
                     if(element) {
                         console.log(id);
@@ -34,11 +51,21 @@ function Map() {
                         let local = event.target.id;
                         let country = local.split("_");
                         country = country[country.length - 1];
-                        let artists = data.filter(e => e.país === country);
+                        let artists = data.filter(e => e.sigla === country);
                         console.log(artists);
                         artists??=[];
-                        //let message = local + artists.map(a => a.nome);
-                        alert(local);
+                        //local = local[local.length - ]
+                        // toast(local, {
+                        //     position: "top-center",
+                        //     autoClose: 2000,
+                        //     hideProgressBar: false,
+                        //     closeOnClick: true,
+                        //     pauseOnHover: true,
+                        //     draggable: true,
+                        //     progress: undefined,
+                        //     theme: "dark",
+                        //     transition: Zoom,
+                        // });
                     });
                 });
             }
@@ -47,6 +74,7 @@ function Map() {
 
     return (
         <>
+            <ToastContainer />
             <div
                 style={{
                     overflow: "auto"
@@ -69,8 +97,8 @@ function Map() {
                         bottom: 0
                     }}
                 >
-                    {!pais && (<ContentArtistas data={data} setPais={setPais}/>)}
-                    {pais && (<ContentPais data={data} pais={pais} setPais={setPais}/>)}
+                    {!artirta && (<ContentArtistas data={data} setArtista={setArtista}/>)}
+                    {artirta && (<ContentPais data={data} setArtista={setArtista} artista={artirta}/>)}
                 </div>
             </div>
         </>

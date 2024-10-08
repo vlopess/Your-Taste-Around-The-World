@@ -1,6 +1,9 @@
 import {getJSON} from "jquery";
 import {useNavigate} from "react-router-dom";
 import Seacher from "../../service/Searcher.jsx";
+import { Zoom, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { styleToastError } from "../../../styles.js";
 
 function ButtonLastFm({username, loading,setLoading}){
     const navigate = useNavigate();
@@ -24,12 +27,34 @@ function ButtonLastFm({username, loading,setLoading}){
                     })
                 });
                 list = await service.fetchData(artists);
+                navigate('/MapResult', { state : list });
             } catch (e) {
-                alert("Not Found");
+                toast.error('Usuário não encontrado!', {
+                    position: "top-center",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Zoom,
+                });
             }
+        }else{
+            toast.warn('Digite o username!', {
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "dark",
+                transition: Zoom,
+            });
         }
         setLoading((loading) => !loading);
-        navigate('/MapResult', { state : list });
     }
     return (
         <button onClick={loadDataFromLastFm} disabled={loading}>

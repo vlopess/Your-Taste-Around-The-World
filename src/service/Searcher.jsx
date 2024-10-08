@@ -20,7 +20,7 @@ class Seacher {
              distrito ou condado. O formato deve ser: 
              {"nome": "Nome da Banda", 
              "origem": "Apenas o Estado (sem a cidade ou distrito, com underscore entre as palavras)", 
-             "país": "País de Origem (SIGLA EM INGLES)"}.`
+             "sigla": "País de Origem (SIGLA EM INGLES)"}, "país": "País de Origem"}.`
         }
 
         const requestBody = handleList(list);

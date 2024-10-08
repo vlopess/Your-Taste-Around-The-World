@@ -15,7 +15,9 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ![](https://skillicons.dev/icons?i=react,vite,idea)
 
 ## Demonstração
-<img src='https://github.com/vlopess/Your-Taste-Around-The-World/blob/master/src/assets/photo.png'></img>
+![Captura de tela de 2024-10-07 22-34-26](https://github.com/user-attachments/assets/14310e6b-7d0d-4549-a91e-6f5c19926c3a)
+
+![Captura de tela de 2024-10-07 22-34-39](https://github.com/user-attachments/assets/b9628f27-40df-4435-bd3f-1f723709aab9)
 
 
 ## Feedback

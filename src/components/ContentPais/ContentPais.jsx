@@ -1,6 +1,5 @@
 import {useEffect, useState} from "react";
 import Arrow from "../../assets/back-arrow.svg";
-import {Tooltip, Tooltip as ReactTooltip} from 'react-tooltip'
 import {ToolTip} from "../ToolTip/ToolTip.jsx";
 
 export const ContentPais = ({data, pais, setPais}) =>{

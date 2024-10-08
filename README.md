@@ -23,7 +23,7 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ![Captura de tela de 2024-10-07 22-34-39](https://github.com/user-attachments/assets/b9628f27-40df-4435-bd3f-1f723709aab9)
 
 ### Tela de detalhamento de país e seus artistas
-![Screenshot_4](https://github.com/user-attachments/assets/50c618c4-71f1-4bf8-bb54-200a805961ae)
+![Screenshot_6](https://github.com/user-attachments/assets/46ba33cf-3294-498c-a5be-6b68755dd5fe)
 
 
 

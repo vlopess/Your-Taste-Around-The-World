@@ -4,11 +4,13 @@ import {useEffect, useState} from "react";
 import {ContentArtistas} from "../ContentArtistas/ContentArtistas.jsx";
 import {ContentPais} from "../ContentPais/ContentPais.jsx";
 import { ToastContainer, Zoom, toast } from "react-toastify";
+import {ContentRegiao} from "../ContentRegiao/ContentRegiao.jsx";
 
 
 function Map() {
     const navigate = useNavigate();
-    const [artirta, setArtista] = useState();
+    const [artista, setArtista] = useState();
+    const [regiao, setRegiao] = useState("");
     const location = useLocation();
     const data = location.state;
     console.log(data)
@@ -41,36 +43,32 @@ function Map() {
                     let id = `${data.origem}_${data.sigla}`;
                     let element = svgDoc.getElementById(id);
                     if(element) {
-                        console.log(id);
                         element.style.setProperty("fill", `rgb(37, 60, ${blue})`, "important");
                         blue = blue + 5;
                     }
                 });
                 paths.forEach(path => {
                     path.addEventListener('click', (event) => {
-                        let local = event.target.id;
-                        let country = local.split("_");
-                        country = country[country.length - 1];
-                        let artists = data.filter(e => e.sigla === country);
-                        console.log(artists);
-                        artists??=[];
-                        //local = local[local.length - ]
-                        // toast(local, {
-                        //     position: "top-center",
-                        //     autoClose: 2000,
-                        //     hideProgressBar: false,
-                        //     closeOnClick: true,
-                        //     pauseOnHover: true,
-                        //     draggable: true,
-                        //     progress: undefined,
-                        //     theme: "dark",
-                        //     transition: Zoom,
-                        // });
+                        let local = event.target.id; //Bahia_BRA
+                        local = local.substring(0, local.length - 4).replaceAll("_", " ");
+                        setRegiao(local);
+                        setArtista("");
+                        toast(local, {
+                            position: "top-center",
+                            autoClose: 2000,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "dark",
+                            transition: Zoom,
+                        });
                     });
                 });
             }
         });
-    }, [data]);
+    }, [data, navigate]);
 
     return (
         <>
@@ -97,8 +95,9 @@ function Map() {
                         bottom: 0
                     }}
                 >
-                    {!artirta && (<ContentArtistas data={data} setArtista={setArtista}/>)}
-                    {artirta && (<ContentPais data={data} setArtista={setArtista} artista={artirta}/>)}
+                    {!artista && (<ContentArtistas data={data} setArtista={setArtista}/>)}
+                    {artista && !regiao &&(<ContentPais data={data} setArtista={setArtista} artista={artista}/>)}
+                    {regiao && !artista &&(<ContentRegiao nome={regiao} data={data} setRegiao={setRegiao}/>)}
                 </div>
             </div>
         </>

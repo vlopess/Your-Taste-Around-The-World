@@ -7,15 +7,8 @@ export const ContentRegiao = ({data, nome, setRegiao}) => {
     const [artistas, setArtistas] = useState([]);
 
     useEffect(() => {
-        data = data.filter(e => e.origem === nome);
-        data.forEach(e => e.origem = e.origem.replaceAll("_", " "))
-        setArtistas(data)
-    }, []);
-
-
-
-    useEffect(() => {
-        let artists = data.filter(e => e.origem === nome);
+        let nomeId = nome.replaceAll(" ", "_").trimEnd();
+        let artists = data.filter(e => e.origem === nomeId);
         setArtistas(artists);
     }, [data, nome]);
 
@@ -38,6 +31,15 @@ export const ContentRegiao = ({data, nome, setRegiao}) => {
                 <span style={{width: "100%"}}><h3>{nome}</h3></span>
             </div>
             <div style={{height: "70%", overflowY: "auto", margin: "15px"}}>
+                <p
+                    style={{
+                        textAlign: "start",
+                        paddingLeft: "15px"
+                    }}
+                >
+                    <b>Artistas:</b>
+                </p>
+                {artistas.length === 0  &&(<p>Sem Artistas</p>)}
                 {
                     artistas.map(e =>
                         <p
@@ -46,7 +48,7 @@ export const ContentRegiao = ({data, nome, setRegiao}) => {
                                 paddingLeft: "15px"
                             }}
                         >
-                            <b>({e.nome})</b>
+                            <b>{e.nome}</b>
                         </p>
                     )
                 }

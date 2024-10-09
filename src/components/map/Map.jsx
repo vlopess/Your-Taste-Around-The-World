@@ -39,7 +39,7 @@ function Map() {
             if (svgDoc) {
                 const paths = svgDoc.querySelectorAll('path');
                 let blue = 60;
-                data.forEach(data =>{
+                data.forEach(data => {
                     let id = `${data.origem}_${data.sigla}`;
                     let element = svgDoc.getElementById(id);
                     if(element) {
@@ -50,20 +50,9 @@ function Map() {
                 paths.forEach(path => {
                     path.addEventListener('click', (event) => {
                         let local = event.target.id; //Bahia_BRA
-                        local = local.substring(0, local.length - 4).replaceAll("_", " ");
+                        local = local.substring(0, local.length - 3).replaceAll("_", " ").trimEnd();
                         setRegiao(local);
-                        setArtista("");
-                        toast(local, {
-                            position: "top-center",
-                            autoClose: 2000,
-                            hideProgressBar: false,
-                            closeOnClick: true,
-                            pauseOnHover: true,
-                            draggable: true,
-                            progress: undefined,
-                            theme: "dark",
-                            transition: Zoom,
-                        });
+                        setArtista(undefined);
                     });
                 });
             }
@@ -95,7 +84,7 @@ function Map() {
                         bottom: 0
                     }}
                 >
-                    {!artista && (<ContentArtistas data={data} setArtista={setArtista}/>)}
+                    {!artista && !regiao && (<ContentArtistas data={data} setArtista={setArtista}/>)}
                     {artista && !regiao &&(<ContentPais data={data} setArtista={setArtista} artista={artista}/>)}
                     {regiao && !artista &&(<ContentRegiao nome={regiao} data={data} setRegiao={setRegiao}/>)}
                 </div>

@@ -1,9 +1,10 @@
 import "./CarouselText.css";
 import {useEffect, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 
 export const CarouselText = () => {
 
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(1);
 
     useEffect(() => {
         setTimeout(() => {
@@ -16,20 +17,52 @@ export const CarouselText = () => {
 
     return (
         <>
-            <div style={{width: "50%"}}>
-                <div className={`${index === 0 ? "txt" : "show"}`} hidden={index !== 0}>
-                    <p>Welcome to the Your Taste Around The World</p>
+                <div style={{width: "50%"}}>
+                    <AnimatePresence>
+                        {index === 1 &&(
+                            <motion.div
+                                initial={{x: 300, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                exit={{x: "-100vw", opacity: 0, transition: { duration: 0.7 }}}
+                            >
+                                <p>Bem-vindo ao <i>Your Taste Around The World</i></p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {index === 2 && (
+                            <motion.div
+                                initial={{x: 300, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                exit={{x: "-100vw", opacity: 0, transition: { duration: 0.7 }}}
+                            >
+                                <p>Você já se perguntou de onde vêm os artistas que você mais escuta?</p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {index === 3 && (
+                            <motion.div
+                                initial={{x: 300, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                exit={{x: "-100vw", opacity: 0, transition: { duration: 0.7 }}}
+                            >
+                                <p>Aqui, você vai descobrir a origem dos seus artistas favoritos!</p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                    <AnimatePresence>
+                        {index === 4 && (
+                            <motion.div
+                                initial={{x: 300, opacity: 0}}
+                                animate={{x: 0, opacity: 1}}
+                                exit={{x: "-100vw", opacity: 0, transition: { duration: 0.7 }}}
+                            >
+                                <p>Com sua conta do LastFm ou Spotify, você pode descobrir tudo isso!</p>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
-                <div className={`${index === 1 ? "txt" : "show"}`} hidden={index !== 1}>
-                    <p>Tu já se perguntou de onde vem os artista que mais ouve?</p>
-                </div>
-                <div className={`${index === 2 ? "txt" : "show"}`} hidden={index !== 2}>
-                    <p>Aqui você vai encontrar de onde é os seus artistas prediletos!</p>
-                </div>
-                <div className={`${index === 3 ? "txt" : "show"}`} hidden={index !== 3}>
-                <p>Apenas com sua conta no LastFm ou Spotify você pode descobrir isso!</p>
-                </div>
-            </div>
         </>
     )
 }

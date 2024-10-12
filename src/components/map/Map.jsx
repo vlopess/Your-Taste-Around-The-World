@@ -13,7 +13,6 @@ function Map() {
     const [regiao, setRegiao] = useState("");
     const location = useLocation();
     const data = location.state;
-    console.log(data)
 
     useEffect(() => {
         if(data == null){

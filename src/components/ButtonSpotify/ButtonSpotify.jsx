@@ -48,7 +48,7 @@ function ButtonSpotify({ setLoading}){
             setLoading(false);
         }
         const list = await service.fetchData(artists);
-        navigate('/MapResult', { state : list });
+        navigate('/Your-Taste-Around-The-World/MapResult', { state : list });
     }
 
     useEffect(() => {

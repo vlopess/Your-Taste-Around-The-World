@@ -27,7 +27,7 @@ function ButtonLastFm({username, loading,setLoading}){
                     })
                 });
                 list = await service.fetchData(artists);
-                navigate('/MapResult', { state : list });
+                navigate('/Your-Taste-Around-The-World/MapResult', { state : list });
             } catch (e) {
                 toast.error('Usuário não encontrado!', {
                     position: "top-center",

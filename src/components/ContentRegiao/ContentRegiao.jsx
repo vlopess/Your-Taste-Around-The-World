@@ -7,8 +7,13 @@ export const ContentRegiao = ({data, nome, setRegiao}) => {
     const [artistas, setArtistas] = useState([]);
 
     useEffect(() => {
-        let nomeId = nome.replaceAll(" ", "_").trimEnd();
+        let nomeId = nome.split("(")[0].trimEnd();
+        nomeId = nomeId.replaceAll(" ", "_").trimEnd();
         let artists = data.filter(e => e.origem === nomeId);
+        if(artists.length === 0){
+            let origem2 = nomeId.replaceAll("_", "-");
+            artists = data.filter(e => e.origem === origem2);
+        }
         setArtistas(artists);
     }, [data, nome]);
 

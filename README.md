@@ -17,10 +17,10 @@ Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
 ## Demonstração
 
 ### Tela inicial
-![Captura de tela de 2024-10-07 22-34-26](https://github.com/user-attachments/assets/14310e6b-7d0d-4549-a91e-6f5c19926c3a)
+![Captura de tela de 2024-10-12 07-57-07](https://github.com/user-attachments/assets/cd58c05d-cca1-44c7-b6b7-95cb789c3212)
 
 ### Tela de detalhamento de artistas mais ouvidos
-![Captura de tela de 2024-10-07 22-34-39](https://github.com/user-attachments/assets/b9628f27-40df-4435-bd3f-1f723709aab9)
+![Captura de tela de 2024-10-12 07-59-02](https://github.com/user-attachments/assets/d20feb44-4089-4dbb-9882-d05ab076b931)
 
 ### Tela de detalhamento de país e seus artistas
 ![Screenshot_6](https://github.com/user-attachments/assets/46ba33cf-3294-498c-a5be-6b68755dd5fe)

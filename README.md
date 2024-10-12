@@ -7,6 +7,7 @@
 ![status](https://img.shields.io/badge/status-desenvolvimento-brightgreen.svg?style=flat)
 ![contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)
 
+<a href = "https://vlopess.github.io/Your-Taste-Around-The-World/" target="_blank"><img src="https://img.shields.io/badge/-ACESSE O SITE-%23333?style=for-the-badge&logoColor=white"   target="_blank"></a>
 
 
 ## Tecnologias utilizadas

@@ -38,19 +38,21 @@ function Map() {
 
             if (svgDoc) {
                 const paths = svgDoc.querySelectorAll('path');
-                let blue = 60;
                 data.forEach(data => {
+                    let blue = Math.floor(Math.random() * 100) + 1;
                     let id = `${data.origem}_${data.sigla}`;
+                    console.log(`${id}`);
                     let element = svgDoc.getElementById(id);
                     if(element) {
-                        element.style.setProperty("fill", `rgb(37, 60, ${blue})`, "important");
-                        blue = blue + 5;
+                        element.style.setProperty("fill", `rgb(15, 30, ${blue})`, "important");
                     }
                 });
                 paths.forEach(path => {
                     path.addEventListener('click', (event) => {
-                        let local = event.target.id; //Bahia_BRA
-                        local = local.substring(0, local.length - 3).replaceAll("_", " ").trimEnd();
+                        let localID = event.target.id; //Bahia_BRA
+                        let local = localID.substring(0, localID.length - 3).replaceAll("_", " ").replaceAll("-", " ").trimEnd();
+                        let country = localID.substring(localID.length - 3).replaceAll("_", "");
+                        local = `${local} (${country})`;
                         setRegiao(local);
                         setArtista(undefined);
                     });

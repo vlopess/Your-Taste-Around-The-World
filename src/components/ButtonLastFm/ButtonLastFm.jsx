@@ -13,7 +13,7 @@ function ButtonLastFm({username, loading,setLoading}){
         setLoading((loading) => !loading);
         let list = [];
         if (username !== "") {
-            let url = "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" + username + "&api_key=53ca750ff08680650a1aa431bf02a97a&limit=10&format=json&callback=?&period=overall&limit=100";
+            let url = "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" + username + "&api_key=53ca750ff08680650a1aa431bf02a97a&limit=10&format=json&callback=?&period=overall&limit=150";
             try {
                 const artists = [];
                 await getJSON(url, function (json) {

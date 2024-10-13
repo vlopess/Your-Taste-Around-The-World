@@ -1,4 +1,4 @@
-import {useEffect, useRef} from "react";
+import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
 import {ajaxSetup, getJSON} from "jquery";
 import Seacher from "../../service/Searcher.jsx";
@@ -7,7 +7,7 @@ function ButtonSpotify({ setLoading}){
     const navigate = useNavigate();
     const CLIENT_ID = "007b8c32445c42e5b4c1d7523691fedb";
     const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
-    const REDIRECT_URI = "https://vlopess.github.io/Your-Taste-Around-The-World/";
+    const REDIRECT_URI = "https://vlopess.github.io/Your-Taste-Around-The-World";
     const TOP_ARTISTS_ENDPOINT = "https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50";
     const SCOPE = "user-top-read";
     const URL = `${SPOTIFY_AUTHORIZE_ENDPOINT}?response_type=token&client_id=${CLIENT_ID}&scope=${SCOPE}&redirect_uri=${REDIRECT_URI}`;

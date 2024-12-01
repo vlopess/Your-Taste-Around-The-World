@@ -30,7 +30,7 @@ class Seacher {
             const result = await model.generateContent(requestBody);
             const response = await result.response;
             let text = response.text();
-            text = text.replace("```json","").replace("```","")
+            text = text.replace("```json","").replace("```","").split("**")[0];
             return JSON.parse(text);
         } catch (e) {
             console.log(`Something Went Wrong: ${e}`);
